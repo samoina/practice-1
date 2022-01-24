@@ -87,7 +87,7 @@ console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [10
 
 // <----------Confirm the Ending-------->
 function confirmEnding(str, target) {
-//find length of target, slice string to -ve that length, then compare the two and if they are same, return true
+  //find length of target, slice string to -ve that length, then compare the two and if they are same, return true
   let tarLength = target.length;
   console.log(tarLength);
 
@@ -105,9 +105,9 @@ console.log(confirmEnding("Abstraction", "action"));
 
 //<------------Repeat a String Repeat a String---------->
 function repeatStringNumTimes(str, num) {
-  let strHolder="";
-  for (let index = 0; index <num; index++) {
-    strHolder= strHolder+str;
+  let strHolder = "";
+  for (let index = 0; index < num; index++) {
+    strHolder = strHolder + str;
   }
   return strHolder
 }
@@ -118,12 +118,12 @@ console.log(repeatStringNumTimes("abc", 4));
 //<-----------Truncate a String----------->
 function truncateString(str, num) {
   let truncString = "";
-  if (str.length>num) {
-    truncString=str.slice(0, num).concat("...");
+  if (str.length > num) {
+    truncString = str.slice(0, num).concat("...");
     return truncString;
   } else {
     return str
-  }  
+  }
 }
 
 console.log(truncateString("Absolutely Longer", 2));
@@ -131,9 +131,37 @@ console.log(truncateString("Absolutely Longer", 2));
 
 
 //<----------Finders Keepers------------>
-function findElement(arr) {
+function findElement(arr, func) {
+  // let num = 0;
+  // for (let index = 0; index < arr.length; index++) {
+  //   num = arr[index];
+  //   if (func(num)) {
+  //     return num;
+  //   }
+  // }
+  // return undefined;  
 
 
-
-
+  return arr[arr.map(func).indexOf(true)];
 }
+
+console.log(findElement([1, 2, 3, 5, 9], num => num % 2 === 0));
+
+// function sample (arr) {
+// // return arr.find(num => num % 2 === 0). this is same as the below inline callback function 
+// return arr.find(function(num){
+//   return num % 2 === 0;
+// })
+// } 
+
+// console.log(sample([10, 3, 5, 9 ]));
+
+function booWho(bool) {
+  if (bool===true || bool === false) {
+    return true
+  } else 
+  return false;
+}
+
+console.log(booWho("false"));
+
